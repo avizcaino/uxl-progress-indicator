@@ -1,5 +1,6 @@
 {
   "name": "@uxland/uxl-progress-indicator",
+  "version": "0.0.0-development",
   "description": "UXLand - Progress Indicator",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -74,6 +75,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "version": "0.0.0-development"
+  }
 }
