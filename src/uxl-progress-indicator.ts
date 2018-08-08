@@ -3,7 +3,7 @@ import {html, LitElement} from '@polymer/lit-element/lit-element';
 import '@polymer/paper-progress/paper-progress'
 import '@polymer/paper-spinner/paper-spinner-lite'
 import '@polymer/iron-flex-layout/iron-flex-layout'
-import {ProgressPosition, ProgressType} from "../index";
+import {ProgressPosition, ProgressType} from "./index";
 import styleTemplate from './uxl-progress-indicator-styles.js';
 import htmlTemplate from './uxl-progress-indicator-template.js';
 

@@ -56,14 +56,13 @@
     "semantic-release": "^15.9.5"
   },
   "scripts": {
-    "bump-bower": "gulp bump-bower && git add . && git commit -m 'Bump bower'",
-    "bump-version": "gulp bump-version",
-    "test": "echo 'TODO: define unit testing'",
-    "compile": "rimraf dist && tsc --p gulp/tsconfig.json",
-    "gulp": "gulp",
-    "generate-d-ts": "rimraf index.d.ts && gulp generate-d-ts",
-    "build": "npm run compile && npm run generate-d-ts",
-    "semantic-release": "semantic-release"
+    "build": "tsc -p tsconfig.json",
+    "test:ui:watch": "nodemon --watch test --watch src -x \"polymer test --config-file wct.config.json\"",
+    "test:ui": "polymer test --config-file wct.config.json",
+    "test:unit": "npm run build && node --experimental-modules node_modules/mocha/bin/_mocha -r esm --ui tdd --reporter mochawesome test/unit",
+    "dist": "tsc --p gulp/tsconfig-dist.json && gulp generate-d-ts",
+    "tdd": "node --experimental-modules node_modules/mocha/bin/_mocha --watch -r esm --ui tdd --reporter mochawesome test/unit",
+    "prepublishOnly": "if [ -d dist ]; then ncp dist/. . && rimraf dist/; fi"
   },
   "license": "Apache-2.0",
   "directories": {
