@@ -1,6 +1,6 @@
 import {html} from '@polymer/lit-element/lit-element';
-
-const style = html`
+import {TemplateResult} from 'lit-html';
+const innerStyle = html`
     <style>
         :host{
             --uxl-progress-indicator-color: #009688;
@@ -70,4 +70,4 @@ const style = html`
                 margin: 1rem;
           }
     </style>`;
-export default style;
+export const style: TemplateResult = innerStyle;

@@ -3,10 +3,11 @@ import {html, LitElement} from '@polymer/lit-element/lit-element';
 import '@polymer/paper-progress/paper-progress'
 import '@polymer/paper-spinner/paper-spinner-lite'
 import '@polymer/iron-flex-layout/iron-flex-layout'
-import {ProgressPosition, ProgressType} from "./index";
-import styleTemplate from './uxl-progress-indicator-styles.js';
-import htmlTemplate from './uxl-progress-indicator-template.js';
+import {style as styleTemplate} from './uxl-progress-indicator-styles.js';
+import {template as htmlTemplate} from './uxl-progress-indicator-template.js';
 
+export type ProgressType = 'spinner' | 'progress';
+export type ProgressPosition = 'vertical' | 'vertical-reverse' | 'horizontal' | 'horizontal-reverse';
 /**
  * `uxl-progress-indicator`
  * A progress indicator component

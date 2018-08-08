@@ -1,3 +1,1 @@
-export type ProgressType = 'spinner' | 'progress';
-export type ProgressPosition = 'vertical' | 'vertical-reverse' | 'horizontal' | 'horizontal-reverse';
-export type ProgressStyles = {color: string} | {stroke: number};
+export  {ProgressPosition, ProgressType, UxlProgressIndicator} from './uxl-progress-indicator';
