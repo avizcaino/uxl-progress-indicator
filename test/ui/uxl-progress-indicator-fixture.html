@@ -71,7 +71,7 @@
         suite('when use uxl-progress-indicator component', () => {
             test('instantiating the element with default properties works', async () => {
                 const element = fixture('defaultTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 assert.equal(element.type, 'spinner');
                 assert.equal(element.position, 'vertical');
                 let spinner = element.shadowRoot.querySelector('paper-spinner-lite');
@@ -80,7 +80,7 @@
 
             test('displays text when pass a text property', async () => {
                 const element = fixture('textTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 let divTitle = element.shadowRoot.querySelector('.progress-title');
                 assert.equal(element.shadowRoot.querySelector('.progress-title').innerText, 'Cargando');
                 assert.equal(element.text, 'Cargando');
@@ -88,21 +88,21 @@
 
             test('displays the spinner when type property is set to "spinner"', async () => {
                 const element = fixture('spinnerTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 let spinner = element.shadowRoot.querySelector('paper-spinner-lite');
                 should.exist(spinner);
             });
 
             test('displays the progress-bar when type property is set to "progress"', async () => {
                 const element = fixture('progressTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 let progress = element.shadowRoot.querySelector('paper-progress');
                 should.exist(progress);
             });
 
             test('displays de slot content unless main content when slot is set', async () => {
                 const element = fixture('slotTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 let slot = element.querySelector('#my-slot');
                 should.exist(slot);
                 let mainContainer = element.shadowRoot.getElementById('progress-container');
@@ -111,7 +111,7 @@
 
             test('applies classifier to container when position property is set', async () => {
                 const element = fixture('positionTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 let mainContainer = element.shadowRoot.getElementById('progress-container');
                 should.exist(mainContainer);
                 assert.isTrue(mainContainer.classList.contains('horizontal'));
@@ -119,15 +119,15 @@
 
             test('applies fit attribute to container when position is set', async () => {
                 const element = fixture('fitTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 let mainContainer = element.shadowRoot.getElementById('progress-container');
                 should.exist(mainContainer);
-                assert.isTrue(mainContainer.getAttribute('fit') === 'true');
+                assert.isTrue(mainContainer.classList.contains('fit'));
             });
 
             test('active property toggle display content', async () => {
                 const element = fixture('activeTestFixture');
-                await element.renderComplete;
+                await element.updateComplete;
                 let mainContainer = element.shadowRoot.getElementById('progress-container');
                 let slot = element.shadowRoot.getElementById('progress-slot');
                 should.not.exist(mainContainer);
