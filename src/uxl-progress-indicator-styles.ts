@@ -22,7 +22,9 @@ const innerStyle = html`
         
          #progress-container{
              background-color: var(--uxl-progress-indicator-background-color);
-             @apply --layout-center-center;
+             display: flex;
+             align-items: center;
+             justify-content: center;
              box-sizing: border-box;
              z-index: 1000;
              height: 100%;
@@ -42,29 +44,42 @@ const innerStyle = html`
           }
           
           #progress-container.vertical{
-                @apply (--layout-vertical);
+                display: flex;
+                flex-direction: column;
           }
     
           #progress-container.vertical-reverse{
-                @apply (--layout-vertical-reverse);
+                display: flex;
+                flex-direction: column-reverse;
           }
     
           #progress-container.horizontal{
-                @apply (--layout-horizontal);
+                display: flex;
+                flex-direction: row;
           }
     
           #progress-container.horizontal-reverse{
-                @apply (--layout-horizontal-reverse);
+                display: flex;
+                flex-direction: row-reverse;
           }
           
-          #progress-container[fit]{
-                @apply(--layout-fixed-top);
-                @apply(--layout-fullbleed);
+          #progress-container.fit{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: 0;
+                height: 100vh;
                 box-sizing: border-box;
           }
           
           .progress-title{
-                @apply (--uxl-progress-indicator-title);
+                font-family: 'Roboto', 'Noto', sans-serif;
+                  font-size: 1rem;
+                  font-weight: normal;
+                  color: #424242;
+                  line-height: normal;
+                  text-transform: none;
                 color: var(--uxl-progress-indicator-title-color);
                 font-size: var(--uxl-progress-indicator-title-size);
                 margin: 1rem;

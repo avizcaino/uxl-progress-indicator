@@ -32,8 +32,8 @@ export class UxlProgressIndicator extends LitElement {
     @property()
     fit: boolean;
 
-    _render(props: UxlProgressIndicator): any{
-        return html`${styleTemplate} ${htmlTemplate(props)}`;
+    render(){
+        return html`${styleTemplate} ${htmlTemplate(this)}`;
     }
 }
 
