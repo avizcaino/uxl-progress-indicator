@@ -18,6 +18,11 @@ const innerStyle = html`
               line-height: normal;
               text-transform: none;
             };
+        }
+        
+        #progress-slot{
+           display: flex;
+           max-height: -webkit-fill-available;
         }                          
         
          #progress-container{
