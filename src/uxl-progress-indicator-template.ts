@@ -10,7 +10,5 @@ ${props.active == true
             ? html `<div class="progress-title">${props.text}</div>`
             : ''}
         </div>`
-    : html `<div id="progress-slot">
-                <slot></slot>
-            </div>`}`;
+    : html `<slot></slot>`}`;
 export const template: (props: any) =>TemplateResult = innerTemplate;

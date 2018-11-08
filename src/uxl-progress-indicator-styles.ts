@@ -18,13 +18,7 @@ const innerStyle = html`
               line-height: normal;
               text-transform: none;
             };
-        }
-        
-        #progress-slot{
-           display: flex;
-           flex: 1;
-           max-height: -webkit-fill-available;
-        }                          
+        }                        
         
          #progress-container{
              background-color: var(--uxl-progress-indicator-background-color);
