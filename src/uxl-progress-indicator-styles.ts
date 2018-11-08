@@ -22,6 +22,7 @@ const innerStyle = html`
         
         #progress-slot{
            display: flex;
+           flex: 1;
            max-height: -webkit-fill-available;
         }                          
         
