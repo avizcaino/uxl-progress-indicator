@@ -26,7 +26,6 @@ const innerStyle = html`
              align-items: center;
              justify-content: center;
              box-sizing: border-box;
-             z-index: 500;
              height: 100%;
          }
         
