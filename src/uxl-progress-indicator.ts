@@ -1,8 +1,7 @@
-import {property} from "@uxland/uxl-polymer2-ts";
-import {html, LitElement} from '@polymer/lit-element/lit-element';
-import '@polymer/paper-progress/paper-progress'
-import '@polymer/paper-spinner/paper-spinner-lite'
-import '@polymer/iron-flex-layout/iron-flex-layout'
+import {property, customElement} from "lit-element/lib/decorators";
+import {html, LitElement} from 'lit-element/lit-element';
+import '@polymer/paper-progress/paper-progress';
+import '@polymer/paper-spinner/paper-spinner-lite';
 import {style as styleTemplate} from './uxl-progress-indicator-styles.js';
 import {template as htmlTemplate} from './uxl-progress-indicator-template.js';
 
@@ -16,6 +15,7 @@ export type ProgressPosition = 'vertical' | 'vertical-reverse' | 'horizontal' | 
  * @polymer
  * @demo demo/index.html
  */
+@customElement('uxl-progress-indicator')
 export class UxlProgressIndicator extends LitElement {
     @property()
     type: ProgressType = 'spinner';
@@ -24,7 +24,7 @@ export class UxlProgressIndicator extends LitElement {
     text: string;
 
     @property()
-    active: boolean;
+    active: boolean = true;
 
     @property()
     position: ProgressPosition = 'vertical';
@@ -36,5 +36,3 @@ export class UxlProgressIndicator extends LitElement {
         return html`${styleTemplate} ${htmlTemplate(this)}`;
     }
 }
-
-window.customElements.define('uxl-progress-indicator', UxlProgressIndicator);

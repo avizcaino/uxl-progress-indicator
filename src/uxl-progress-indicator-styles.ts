@@ -1,7 +1,11 @@
-import {html} from '@polymer/lit-element/lit-element';
+import {html} from 'lit-element';
 import {TemplateResult} from 'lit-html';
 const innerStyle = html`
     <style>
+    
+    *[hidden]{
+        display: none;
+    }
         :host{
             --uxl-progress-indicator-color: #009688;
             --uxl-progress-indicator-stroke: 2px;
