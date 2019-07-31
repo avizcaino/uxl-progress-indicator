@@ -1,1 +1,2 @@
-export  {ProgressPosition, ProgressType, UxlProgressIndicator} from './uxl-progress-indicator';
+export * from './components/uxl-progress-indicator/uxl-progress-indicator';
+export * from 'src/utilities';

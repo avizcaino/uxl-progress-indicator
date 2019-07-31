@@ -1,0 +1,111 @@
+*[hidden] {
+  display: none;
+}
+:host {
+  --uxl-progress-indicator-color: #009688;
+  --uxl-progress-indicator-spinner-stroke: 3px;
+  --uxl-progress-indicator-spinner-width: 30px;
+  --uxl-progress-indicator-spinner-height: 30px;
+  --uxl-progress-indicator-bouncing-ball-width: 10px;
+  --uxl-progress-indicator-bouncing-ball-height: 10px;
+  --uxl-progress-indicator-background-color: transparent;
+  --uxl-progress-indicator-title-color: rgba(0, 0, 0, 0.87);
+  --uxl-progress-indicator-title-size: 1rem;
+  --uxl-progress-indicator-title-weight: light;
+}
+
+#progress-container {
+  background-color: var(--uxl-progress-indicator-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+#progress-container.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+#progress-container.vertical-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#progress-container.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+#progress-container.horizontal-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#progress-container.fit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.progress-title {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  font-weight: var(--uxl-progress-indicator-title-weight);
+  line-height: normal;
+  text-transform: none;
+  color: var(--uxl-progress-indicator-title-color);
+  font-size: var(--uxl-progress-indicator-title-size);
+  margin: 1rem;
+}
+
+//Bouncing loader busy
+@keyframes bouncing-loader {
+  to {
+    opacity: 0.1;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+.bouncing-loader {
+  display: flex;
+  justify-content: center;
+}
+.bouncing-loader > div {
+  width: var(--uxl-progress-indicator-bouncing-ball-width);
+  height: var(--uxl-progress-indicator-bouncing-ball-width);
+  margin: 1rem 0.2rem;
+  background: var(--uxl-progress-indicator-color);
+  border-radius: 50%;
+  animation: bouncing-loader 0.6s infinite alternate;
+}
+.bouncing-loader > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bouncing-loader > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+//spinner
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  display: inline-block;
+  border-width: var(--uxl-progress-indicator-spinner-stroke);
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-left-color: var(--uxl-progress-indicator-color);
+  border-radius: 50%;
+  width: var(--uxl-progress-indicator-spinner-height);
+  height: var(--uxl-progress-indicator-spinner-width);
+  animation: donut-spin 1.2s linear infinite;
+}
